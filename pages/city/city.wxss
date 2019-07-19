@@ -4,7 +4,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color:  rgb(143, 104, 148);
+  background-color:  #9C76C2;
   border-bottom: 1rpx dashed rgb(196, 160, 196);
 }
 
@@ -56,7 +56,8 @@
   height: 30px;
   line-height: 30px;
   color: #fff;
-  background-color:  rgb(140, 110, 158);
+  /* background-color: yellow; */
+  background-color:  #9C76C2;
 }
 .city-item {
   height: 50px;
@@ -69,7 +70,7 @@
 }
 
 .search-city-item{
-  background-color:  rgb(140, 110, 158);
+  background-color:  #9C76C2;
   border-bottom: 1rpx solid rgb(196, 160, 196);
 }
 

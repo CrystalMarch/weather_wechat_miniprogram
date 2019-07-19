@@ -62,8 +62,8 @@ picker {
 }
 .weather .section {
   float: left;
-  width: 130rpx;
-  height: 130rpx;
+  width: 65px;
+  height: 65px;
   /* display: block;  */
   margin: auto 10%;
   margin-top: 3%;
@@ -131,7 +131,7 @@ picker {
 .suggestion .title {
   display: block;
   padding: 3% 5%; 
-  background: rgb(140, 110, 158); 
+  background: #9C76C2; 
   color: #fff;
 }
 .suggestion .list { 
@@ -142,7 +142,7 @@ picker {
 .suggestion .list_l { 
   flex: 1; 
   text-align: center; 
-  background: rgb(140, 110, 160); 
+  background: #9C76C2; 
   color: #eee; 
   padding: 8px;
 }
