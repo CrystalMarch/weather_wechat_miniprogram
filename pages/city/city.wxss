@@ -2,34 +2,35 @@
   height: 40px;
   display: flex;
   flex-direction: row;
-  background-color:  rgb(183, 119, 190);
+  justify-content: center;
+  align-items: center;
+  background-color:  rgb(143, 104, 148);
+  border-bottom: 1rpx dashed rgb(196, 160, 196);
 }
 
-input::-webkit-input-placeholder{
-  color: #fff
+.search-image {
+  width: 28px;
+  height: 28px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
-input {
-    /* background-color: rgb(124, 87, 128); */
-    color: #fff;
-    font-size: 14px
-}
-  
 .search {
   flex: 1;
   width: 0;
-  height: 40px;
-  padding: 0 10px;
-  border-bottom: 1rpx dashed rgb(196, 160, 196);
+  height: 30px;
+  border-radius: 15px;
+  padding: 10 10px;
+  margin-right: 10px;
   box-sizing: border-box;
+  background-color: white;
+  text-align: center;
 }
 .search-cancel {
   color:#fff;
   line-height: 40px;
   padding: 0 8px;
   font-size: 14px;
-  border-bottom: 1rpx dashed rgb(196, 160, 196);
-  /* background-color: rgb(183, 119, 190) */
 }
 .mask {
   width: 100vw;

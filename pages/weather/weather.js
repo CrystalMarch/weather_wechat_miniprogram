@@ -27,7 +27,7 @@ Page({
    */
   onLoad: function (options) {
     qqmapsdk = new QQMapWX({
-      key: 'AMEBZ-BLEKP-UU2DI-VBLQE-R26QV-7LBI2' //自己的key秘钥 http://lbs.qq.com/console/mykey.html 在这个网址申请
+      key: '' //自己的key秘钥 http://lbs.qq.com/console/mykey.html 在这个网址申请
     });
     let that = this;
     that.getUserLocation()

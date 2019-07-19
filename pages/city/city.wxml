@@ -2,6 +2,7 @@
 
     <!-- 搜索框 -->
     <view class="search-bar">
+      <image class="search-image" src="../../images/search.png"></image>
       <input type="text" 
             class="search"
             focus="{{onFocus}}"
