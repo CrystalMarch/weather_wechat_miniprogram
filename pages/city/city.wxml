@@ -1,0 +1,74 @@
+<view class="container">
+
+    <!-- 搜索框 -->
+    <view class="search-bar">
+      <input type="text" 
+            class="search"
+            focus="{{onFocus}}"
+            bindinput="onInput"
+            confirm-type="search"
+            placeholder="搜索" />
+      <text wx:if="{{showSearch}}" 
+            class="search-cancel"
+            bindtap="hideSearchResult">取消</text>
+    </view>
+
+    <!-- 搜索结果 -->
+    <view wx:if="{{showSearch}}" 
+          class="mask" 
+          style="height: calc(100vh - 40px)">
+      <scroll-view class="search-scroll" wx:if="{{searchResult.length}}" 
+                   style="height: 100%; width: 100%;"
+                   scroll-y>
+        <block wx:for="{{searchResult}}">
+          <view class="city-item search-city-item"
+                data-city="{{item}}"
+                bindtap="onSelected">
+            {{ item.name }}
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    
+    <!-- 列表 -->
+    <scroll-view class="fit scroll"
+                 scroll-y
+                 scroll-into-view="{{scrollIntoId}}">
+      <view id="top" 
+            class="city-letter">当前定位城市：</view>
+      <view class="city-item" bindtap="onLocationTaped">{{current_city}}</view>
+
+      <view class="city-letter">热门城市</view>
+      <block wx:for="{{hotCitys}}">
+        <view class="city-item"
+                data-city="{{item}}"
+                bindtap="onSelected">
+            {{item.name}}
+        </view>
+
+      </block>
+      
+      <block wx:for="{{citys}}" wx:key="letter.letter" wx:for-item="letter">
+        <view>
+          <view class="city-letter" id="{{letter.letter}}">{{ letter.letter }}</view>
+          <block wx:for="{{letter.cityInfo}}" wx:key="city.id" wx:for-item="city">
+              <view class="city-item"
+                  data-city="{{city}}"
+                  bindtap="onSelected">{{ city.name }}
+              </view>
+          </block>
+        </view>
+      </block>
+      
+      <view class="index-list">
+        <block wx:for="{{letters}}">
+          <view class="index-list-item"
+                  data-letter="{{item}}"
+                  bindtouchstart="onListTouchStart"
+                  bindtouchmove="onListTouchMove"
+                  bindtouchend="onListTouchEnd">{{ item }}</view>
+        </block>
+      </view>
+      <view wx:if="{{currentLetter}}" class="letter-notify">{{ currentLetter }}</view>
+    </scroll-view>
+  </view>

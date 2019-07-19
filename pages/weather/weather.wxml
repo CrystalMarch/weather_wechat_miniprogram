@@ -1,0 +1,104 @@
+<!--pages/weather/weather.wxml-->
+<view class="container">
+  <scroll-view>
+      <view class="weather" bindtap="showcurid">
+      <view class="top_header">
+        <view class="city" bindtap="chooseCity">
+          <image class="city_icon" src="../../images/curcity.png"></image>
+          <block wx:if="{{locationFail}}">
+            <text>定位失败</text>
+          </block>
+          <block wx:else>
+            <text>{{ city ? city : '定位中...' }}</text>
+          </block>
+        </view>
+        <view class="time">
+          <image class="time_icon" src="../../images/calendar.png"></image>
+          <picker bindchange="changeDay"  value="{{dayIndex}}" range="{{day_list}}"> 
+            <text>{{day_list[dayIndex]}}</text>
+          </picker>
+        </view>
+      </view>
+      
+      <view class="display">
+        <image class="section" src="../../images/icon/{{cur_day_weather_data.wea_img}}.png"></image>
+        <view class="aside">
+          <text class="temperature">{{cur_day_weather_data.tem}}</text>
+          <text>{{cur_day_weather_data.wea}}</text>
+        </view>
+      </view>
+      <text class="day">最高气温：{{cur_day_weather_data.tem1}}  最低气温：{{cur_day_weather_data.tem2}}  {{cur_day_weather_data.win[0]}}</text>
+      <text class="description">{{cur_day_weather_data.air_tips}}</text>
+      <view class="other">
+        <view class="border_r"><text class="title">相对湿度</text><text class="info">{{cur_day_weather_data.humidity}}%</text></view>
+        <view class="border_r"><text class="title">风力</text><text class="info">{{cur_day_weather_data.win_speed}}</text></view>
+        <view><text class="title">空气质量</text><text class="info">{{cur_day_weather_data.air}} {{cur_day_weather_data.air_level}}</text></view>
+      </view>
+    </view>
+    
+    <view class="suggestion">
+      <text class="title">生活指数</text>
+        <view class="list">
+          <view class="list_l">
+            <image src="../../images/icon/uv.png"></image>
+            <text>紫外线指数</text>
+          </view>
+          <view class="list_r">
+            <text class="list_t">{{cur_day_weather_data.index[0].level}}</text>
+            <text>{{cur_day_weather_data.index[0].desc}}</text>
+          </view>
+        </view>
+        <view class="list">
+          <view class="list_l">
+            <image src="../../images/icon/sport.png"></image>
+            <text>运动指数</text>
+          </view>
+          <view class="list_r">
+            <text class="list_t">{{cur_day_weather_data.index[1].level ? cur_day_weather_data.index[1].level : '看您心情'}}</text>
+            <text>{{cur_day_weather_data.index[1].desc}}</text>
+          </view>
+        </view>
+        <view class="list">
+          <view class="list_l">
+            <image src="../../images/icon/flu.png"></image>
+            <text>血糖指数</text>
+          </view>
+          <view class="list_r">
+            <text class="list_t">{{cur_day_weather_data.index[2].level}}</text>
+            <text>{{cur_day_weather_data.index[2].desc}}</text>
+          </view>
+        </view>
+        <view class="list">
+          <view class="list_l">
+            <image src="../../images/icon/drsg.png"></image>
+            <text>穿衣指数</text>
+          </view>
+          <view class="list_r">
+            <text class="list_t">{{cur_day_weather_data.index[3].level}}</text>
+            <text>{{cur_day_weather_data.index[3].desc}}</text>
+          </view>
+        </view>
+        <view class="list">
+          <view class="list_l">
+            <image src="../../images/icon/cw.png"></image>
+            <text>洗车指数</text>
+          </view>
+          <view class="list_r">
+            <text class="list_t">{{cur_day_weather_data.index[4].level}}</text>
+            <text>{{cur_day_weather_data.index[4].desc}}</text>
+          </view>
+        </view>
+        <view class="list">
+          <view class="list_l">
+            <image src="../../images/icon/trav.png"></image>
+            <text>空气污染扩散指数</text>
+          </view>
+          <view class="list_r">
+            <text class="list_t">{{cur_day_weather_data.index[5].level}}</text>
+            <text>{{cur_day_weather_data.index[5].desc}}</text>
+          </view>
+        </view>
+    </view>
+  </scroll-view>
+  
+</view>
