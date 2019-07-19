@@ -2,7 +2,7 @@
 ![小程序码](./resource/miniprogram_code.jpg)
 
 ### 效果图：
-![效果图](.resource/weather_screen.gif)
+![效果图](./resource/weather_screen.gif)
 
 ### 使用须知：
 
