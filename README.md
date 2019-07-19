@@ -1,8 +1,8 @@
 ### 小程序码：
-![alt text](https://github.com/CrystalMarch/weather_wechat_miniprogram/blob/master/resource/miniprogram_code.jpg)
+![小程序码](./resource/miniprogram_code.jpg)
 
 ### 效果图：
-![alt text](https://github.com/CrystalMarch/weather_wechat_miniprogram/blob/master/resource/weather_screen.gif)
+![效果图](.resource/weather_screen.gif)
 
 ### 使用须知：
 
